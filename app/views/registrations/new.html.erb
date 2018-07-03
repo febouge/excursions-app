@@ -1,0 +1,42 @@
+<% provide(:title, "Registration") %>
+<div class="page-header">
+  <h4><%= t('views.registrations.registration_for').concat(@excursion.name) %></h4>
+</div>
+<div class="container">
+  <%= render 'registrations/error_messages' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @registration, url:  excursion_registrations_path(@excursion.id) do |f| %>
+      <p>
+        <%= f.label t('views.registrations.name') %><br>
+        <%= f.text_field :name, :value => current_user.name + " " + current_user.surname, :readonly => true, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.phone') %><br>
+        <%= f.text_field :phoneNumber, :value => current_user.phoneNumber, :readonly => true, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.email') %><br>
+        <%= f.text_field :email, :value => current_user.email, :readonly => true, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.bus_spots') %><br>
+        <%= f.number_field :busSpots, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.lunch_spots') %><br>
+        <%= f.number_field :lunchSpots, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label :coi_acceptance do
+          raw(t('views.registrations.coi_acceptance'))
+        end %>&nbsp;
+        <%= f.check_box :coi %>
+      </p>
+      <p>
+        <%= f.submit t('views.registrations.lunch_spots'), class: 'btn custom-btn'%>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>

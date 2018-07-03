@@ -1,0 +1,141 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please, read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  apptitle: "Excursions app"
+  index:
+    header:
+      home: "Home"
+      my_account: "My account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Log out"
+    home: "Home"
+    signup: "Sign up"
+    signin: "Sign in"
+  success:
+    logged_out: "You have logged out."
+    signup_correct: "You are signed up."
+    updated_info: "Your user info has been updated."
+    user_deactivated: "The user has been activated/deactivated."
+    registration_updated: "The registration has been updated."
+    registration_correct: "You have performed the registration to "
+  errors:
+    unprivileged_user: "You do not have permissions to enter the requested page."
+    login_first: "In order to perform this action, you must sign in."
+    deactivated_account: "Your account is disabled. Please contact the administrator."
+    wrong_credentials: "Your credentials are wrong."
+    bad_email: "Any user match the given email."
+    not_enough_spots: "There are no enough bus spots."
+    already_registered: "You have already registered yourself to this excursion."
+    excursion_not_active: "The excursion is not active anymore."
+    unable_to_register: "The registration has not been performed."
+  models:
+    errors:
+      invalid_characters: "There are no valid characters."
+  views:
+    layouts:
+      enter_excursions: "Enter to excursions configuration:"
+      excursions: "Excursions"
+      enter_users: "Enter to users configuration:"
+      users: "Users"
+      welcome_app: "Welcome to excursion bookings app"
+      registration_last_excursion: "Register to our last excursion:"
+      register: "Register"
+      no_active_excursion: "There are no active excursion."
+      no_logged_intro: "This app allows you to register to our excursions"
+      login_intro: "If you have an account, please log in: "
+      signup_intro: "If you don't have an account, you can sign up: "
+    excursions:
+      list: "Excursion list"
+      name: "Name"
+      bus_spots: "Max bus spots"
+      lunch_spots: "Max lunch spots"
+      active: "Active"
+      update: "Update"
+      create: "Create"
+      new: "New"
+      back: "Back"
+      create_excursion: "Create excursion"
+      excursion_info: "Excursion information"
+      edit_excursion: "Edit excursion"
+      yes: "Yes"
+      no: "No"
+      registrations: "Registrations"
+      show: "Show"
+      edit: "Edit"
+      export: "Export"
+      delete: "Delete"
+      are_you_sure: "Are you sure?"
+    sessions:
+      signin: "Sign in"
+      email: "Email"
+      password: "Password"
+      not_account: "No registered? "
+    static_pages:
+      home:
+        welcome: "Welcome to excursions app"
+      404:
+        title: "Not found"
+        page_not_found: "Page not found"
+        message: "The requested page cannot be found."
+    registrations:
+      registrations_list: "Registrations for "
+      registrations: "Registrations: "
+      bus_registrations: "Registered bus spots: "
+      lunch_registrations: "Registered lunch spots: "
+      register: "Register"
+      name: "Name"
+      phone: "Phone"
+      email: "Email"
+      bus_spots: "Bus spots"
+      lunch_spots: "Lunch spots"
+      update: "Update"
+      edit: "Edit"
+      delete: "Delete"
+      are_you_sure: "Are you sure?"
+      back: "Back"
+      registration_for: "Registration for "
+      coi_acceptance: "I accept the <a href='/conditions'>conditions</a>."
+      editing_registration: "Editing registration of "
+    users:
+      user_list: "User list"
+      user_info: "User info"
+      details_of: "Details of "
+      name: "Name"
+      surname: "Surname"
+      phone: "Phone"
+      email: "Email"
+      active: "Active?"
+      administrator: "Administrator?"
+      registration_date: "Registration date"
+      edit: "Edit"
+      yes: "Yes"
+      no: "No"
+      change_state: "Change state"
+      deactive: "Deactivate"
+      active: "Activate"
+      are_you_sure: "Are you sure?"
+      password: "Password"
+      confirm_password: "Confirm password"
+      update_user_info: "Update user info"
+      update: "Update"
+      signup: "Sign up"

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+validExcursion:
+  name: ExcursionTest
+  busSpots: 1
+  lunchSpots: 1
+  active: false
+
+noValidExcursion:
+  name: 01
+  busSpots: kr
+  lunchSpots: rest
+  active: false

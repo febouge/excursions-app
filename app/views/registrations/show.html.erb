@@ -1,0 +1,19 @@
+<% provide(:title, "Registration") %>
+<div class="page-header">
+  <h4>Inscripció</h4>
+</div>
+<div class="container-fluid">
+  <dl class="dl-horizontal">
+    <dt><%= t('views.registrations.name') %></dt>
+    <dd><%= @registration.name %></dd>
+    <dt><%= t('views.registrations.phone') %></dt>
+    <dd><%= @registration.phoneNumber %></dd>
+    <dt><%= t('views.registrations.email') %></dt>
+    <dd><%= @registration.email %></dd>
+    <dt><%= t('views.registrations.bus_spots') %></dt>
+    <dd><%= @registration.busSpots %></dd>
+    <dt><%= t('views.registrations.lunch_spots') %></dt>
+    <dd><%= @registration.lunchSpots %></dd>
+  </dl>
+  <%= link_to t('views.registrations.back'), excursions_path, class: 'btn custom-btn' %>
+</div>

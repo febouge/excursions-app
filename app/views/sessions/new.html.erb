@@ -1,0 +1,21 @@
+<% provide(:title, t('views.sessions.signin')) %>
+<div class="page-header">
+  <h4><%= t('views.sessions.signin') %></h4>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label t('views.sessions.email') %>
+      <%= f.email_field :email, class: 'form-control' %></br>
+
+      <%= f.label t('views.sessions.password') %>
+      <%= f.password_field :password, class: 'form-control' %></br>
+
+      <%= f.submit t('views.sessions.signin'), class: "btn custom-btn" %><br>
+      <% end %>
+      <p><%= t('views.session.not_account') %> <%= link_to t('index.signup'), new_user_path  %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,163 @@
+// Bootstrap import
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*Color variables, etc*/
+$header-grey: #34302D;
+$leaf-green: #6DB33F;
+$darker-leaf-green: #5c9735;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+/* DEBUG BOX */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* universal */
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: $header-grey;
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $header-grey;
+}
+
+h3 {
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $header-grey;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+/* header */
+.navbar {
+    background-color: $header-grey;
+}
+
+.navbar-inverse {
+    background-color: $header-grey;
+}
+
+.navbar-fixed-top {
+    border-width: 0px;
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: $leaf-green;
+    text-transform: uppercase;
+    margin-top: 9px;
+    font-weight: bold;
+    margin-left: 5px;
+    &:hover {
+        color: $darker-leaf-green;
+        text-decoration: none;
+    }
+}
+
+/* footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+    a {
+        color: #555;
+        &:hover {
+            color: #222;
+        }
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.custom-btn {
+    color: $leaf-green;
+    background-color: $header-grey;
+    border-color: $header-grey;
+}
+
+.custom-btn:hover {
+    color: $darker-leaf-green;
+    background-color: $header-grey;
+    border-color: $header-grey;
+}

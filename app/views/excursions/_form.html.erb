@@ -1,0 +1,33 @@
+<div class="container">
+  <%= render 'excursions/error_messages' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @excursion do |f| %>
+      <p>
+        <%= f.label t('views.excursions.name') %>
+        <%= f.text_field :name, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label t('views.excursions.bus_spots') %>
+        <%= f.number_field :busSpots, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label t('views.excursions.lunch_spots') %>
+        <%= f.number_field :lunchSpots, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label t('views.excursions.active') %>
+        <%= f.check_box :active %>
+      </p>
+      <p>
+      <% if  @excursion.id != nil %>
+         <%= f.submit t('views.excursions.update'), class: "btn custom-btn"%>
+      <% else %>
+	       <%= f.submit t('views.excursions.create'), class: "btn custom-btn"%>
+      <% end %>
+      </p>
+    <% end %>
+    </div>
+  </div>
+  <%= link_to t('views.excursions.back'), excursions_path, class: 'btn custom-btn' %>
+</div>

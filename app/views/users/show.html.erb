@@ -1,0 +1,17 @@
+<% provide(:title, t('views.users.user_info')) %>
+<div class="page-header">
+  <h4><%= t('views.users.details_of').concat(@user.name).concat(" ").concat(@user.surname)%></h4>
+</div>
+<div class="container-fluid">
+  <dl class="dl-horizontal">
+    <dt><%= t('views.users.name') %></dt>
+    <dd><%= @user.name %></dd>
+    <dt><%= t('views.users.surname') %></dt>
+    <dd><%= @user.surname %></dd>
+    <dt><%= t('views.users.phone') %></dt>
+    <dd><%= @user.phoneNumber %></dd>
+    <dt><%= t('views.users.email') %></dt>
+    <dd><%= @user.email %></dd>
+  </dl>
+  <%= link_to t('views.users.back'), root_url, class: "btn custom-btn" %>
+</div>

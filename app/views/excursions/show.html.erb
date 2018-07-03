@@ -1,0 +1,17 @@
+<% provide(:title, "Excursions") %>
+<div class="page-header">
+  <h4><%= t('views.excursions.excursion_info') %></h4>
+</div>
+<div class="container-fluid">
+  <dl class="dl-horizontal">
+    <dt><%= t('views.excursions.name') %></dt>
+    <dd><%= @excursion.name %></dd>
+    <dt><%= t('views.excursions.bus_spots') %></dt>
+    <dd><%= @excursion.busSpots %></dd>
+    <dt><%= t('views.excursions.lunch_spots') %></dt>
+    <dd><%= @excursion.lunchSpots %></dd>
+    <dt><%= t('views.excursions.active') %>?</dt>
+    <dd><%= @excursion.active ? t('views.excursions.yes') : t('views.excursions.no') %></dd>
+  </dl>
+  <%= link_to t('views.excursions.back'), excursions_path, class: 'btn custom-btn' %>
+</div>

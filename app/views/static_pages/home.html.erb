@@ -1,0 +1,18 @@
+<% provide(:title, "Home") %>
+<div class="page-header">
+  <h4><%= t('views.static_pages.home.welcome') %></h4>
+</div>
+<div class="jumbotron">
+<div class="row">
+  <div class="container-fluid">
+    <% if  current_user && current_user.admin? %>
+      <%= render 'layouts/admin_home' %>
+      <%= render 'layouts/noadmin_home' %>
+    <% elsif current_user && !current_user.admin? %>
+      <%= render 'layouts/noadmin_home' %>
+    <% else %>
+      <%= render 'layouts/nologged_home' %>
+    <% end %>
+  </div>
+</div>
+</div>

@@ -1,0 +1,45 @@
+<% provide(:title, "Registrations") %>
+<div class="page-header">
+  <h4><%= t('views.registrations.registrations_list').concat(@excursion.name) %></h4>
+</div>
+<div class="container-fluid">
+  <p>
+    <%= t('views.registrations.registrations').concat(@registrations.count.to_s) %></br>
+    <%= t('views.registrations.bus_registrations').concat(@bus.to_s) %></br>
+    <%= t('views.registrations.lunch_registrations').concat(@lunch.to_s) %></br>
+  </p>
+  <table class="table">
+    <tr>
+      <th><%= t('views.registrations.name') %></th>
+      <th><%= t('views.registrations.phone') %></th>
+      <th><%= t('views.registrations.email') %></th>
+      <th><%= t('views.registrations.bus_spots') %></th>
+      <th><%= t('views.registrations.lunch_spots') %></th>
+      <th><%= t('views.registrations.edit') %></th>
+      <th><%= t('views.registrations.delete') %></th>
+    </tr>
+
+    <% @registrations.each do |registration| %>
+    <tr>
+      <td><%= registration.name %></td>
+      <td><%= registration.phoneNumber %></td>
+      <td><%= registration.email %></td>
+      <td><%= registration.busSpots %></td>
+      <td><%= registration.lunchSpots %></td>
+      <td>
+        <%= link_to edit_excursion_registration_path(:excursion_id => @excursion.id, :id => registration.id) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to excursion_registration_path(:excursion_id => @excursion.id, :id => registration.id),
+        method: :delete,
+        data: { confirm: t('views.registrations.are_you_sure') } do%>
+        <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to t('views.registrations.back'), excursions_path, class: "btn custom-btn" %>
+</div>

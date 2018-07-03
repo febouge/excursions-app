@@ -1,0 +1,38 @@
+<% provide(:title, "Users") %>
+<div class="page-header">
+  <h4><%= t('views.users.user_list') %></h4>
+</div>
+<div class="container-fluid">
+  <table class="table">
+    <tr>
+      <th><%= t('views.users.name') %></th>
+      <th><%= t('views.users.surname') %></th>
+      <th><%= t('views.users.phone') %></th>
+      <th><%= t('views.users.email') %></th>
+      <th><%= t('views.users.active') %></th>
+      <th><%= t('views.users.administrator') %></th>
+      <th><%= t('views.users.registration_date') %></th>
+      <th><%= t('views.users.edit') %></th>
+      <th><%= t('views.users.change_state') %></th>
+    </tr>
+
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.surname %></td>
+      <td><%= user.phoneNumber %></td>
+      <td><%= user.email %></td>
+      <td><%= user.active? ? t('views.users.yes') : t('views.users.no') %></td>
+      <td><%= user.admin? ? t('views.users.yes') : t('views.users.no') %></td>
+      <td><%= user.created_at.strftime("%d-%m-%Y") %></td>
+      <td><%= link_to  edit_user_path(user) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <% end %></td>
+      <% @label = user.active? ? t('views.users.deactivate') : t('views.users.activate') %>
+      <td><%= link_to @label, user_path(user),
+      method: :delete,
+      data: { confirm: t('views.users.are_you_sure') }, class: "btn custom-btn" %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

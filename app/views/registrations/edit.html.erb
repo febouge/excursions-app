@@ -1,0 +1,38 @@
+<% provide(:title, "Registration") %>
+<div class="page-header">
+  <h4><%= t('views.registrations.editing_registration').concat(@registration.name) %></h4>
+</div>
+<div class="container">
+  <%= render 'registrations/error_messages' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @registration, url:  excursion_registration_path(@registration.excursion_id, @registration.id), html: { method: :patch } do |f| %>
+      <p>
+        <%= f.label t('views.registrations.name') %><br>
+        <%= f.text_field :name, :value => @registration.name, :readonly => !current_user.admin?, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.phone') %><br>
+        <%= f.text_field :phoneNumber, :value => @registration.phoneNumber, :readonly => !current_user.admin?, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.registrations.email') %><br>
+        <%= f.text_field :email, :value => @registration.email, :readonly => !current_user.admin?, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label t('views.registrations.bus_spots') %><br>
+        <%= f.number_field :busSpots, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label t('views.registrations.lunch_spots') %><br>
+        <%= f.number_field :lunchSpots, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.submit t('views.registrations.update'), class: 'btn custom-btn'%>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<% provide(:title, "Excursions") %>
+<div class="page-header">
+  <h4><%= t('views.excursions.list') %></h4>
+</div>
+<div class="container-fluid">
+  <%= link_to new_excursion_path, class: "btn custom-btn" do %>
+  <span class="glyphicon glyphicon-plus"></span> <%= t('views.excursions.new') %>
+  <% end %></br></br>
+  <table class="table">
+    <tr>
+      <th><%= t('views.excursions.name') %></th>
+      <th><%= t('views.excursions.bus_spots') %></th>
+      <th><%= t('views.excursions.lunch_spots') %></th>
+      <th><%= t('views.excursions.active') %></th>
+      <th><%= t('views.excursions.registrations') %></th>
+      <th><%= t('views.excursions.show') %></th>
+      <th><%= t('views.excursions.edit') %></th>
+      <th><%= t('views.excursions.export') %><th>
+      <th><%= t('views.excursions.delete') %></th>
+    </tr>
+
+    <% @excursions.each do |excursion| %>
+    <tr>
+      <td><%= excursion.name %></td>
+      <td><%= excursion.busSpots %></td>
+      <td><%= excursion.lunchSpots %></td>
+      <td><%= excursion.active? ? t('views.excursions.yes') : t('views.excursions.no') %></td>
+      <td><%= link_to excursion_registrations_path(excursion) do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        <% end %>
+      </td>
+      <td><%= link_to excursion_path(excursion) do %>
+        <span class="glyphicon glyphicon-search"></span>
+        <% end %>
+      </td>
+      <td><%= link_to edit_excursion_path(excursion) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      </td>
+      <td><%= link_to download_excursion_path(:id => excursion.id, :format => :csv) do %>
+        <span class="glyphicon glyphicon-save"></span>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to excursion_path(excursion),
+        method: :delete,
+        data: { confirm: t('views.excursions.are_you_sure') } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to t('views.excursions.back'), root_path, class: "btn custom-btn" %>
+</div>

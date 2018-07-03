@@ -1,0 +1,15 @@
+<p>
+  <%= t('views.layouts.no_logged_intro') %>
+</p>
+<p>
+  <%= t('views.layouts.login_intro') %> </br>
+  <%= link_to login_path, class: "btn custom-btn center" do%>
+  <span class="glyphicon glyphicon-log-in"></span> <%= t('index.signin') %>
+  <% end %>
+</p>
+<p>
+  <%= t('views.layouts.signup_intro') %> </br>
+  <%= link_to new_user_path, class: "btn custom-btn center" do%>
+  <span class="glyphicon glyphicon-pencil"></span> <%= t('index.signup') %>
+  <% end %>
+</p>

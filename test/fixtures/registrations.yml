@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+validRegistration:
+  name: MyString
+  phoneNumber: 555555555
+  email: testmail@testmail.com
+  busSpots: 1
+  lunchSpots: 1
+  coi: true
+
+noValidRegistration:
+  name: nil
+  phoneNumber: 3333333
+  email: anothertest@mail
+  busSpots: -1
+  lunchSpots: -2
+  coi: false

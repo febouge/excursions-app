@@ -1,0 +1,36 @@
+<% provide(:title, t('views.users.update_user_info')) %>
+<div class="page-header">
+  <h4><%= t('views.users.update_user_info') %></h4>
+</div>
+<div class="container">
+  <%= render 'users/error_messages' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@user) do |f| %>
+      <p>
+        <%= f.label t('views.users.name') %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.users.surname') %>
+        <%= f.text_field :surname, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label t('views.users.phone') %>
+        <%= f.number_field :phoneNumber, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label :password, t('views.users.password') %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation, t('views.users.confirm_password') %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.submit t('views.users.update'), class: "btn custom-btn" %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>

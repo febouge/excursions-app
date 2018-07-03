@@ -1,0 +1,10 @@
+<p>
+  <% if Excursion.last != nil %>
+    <%= t('views.layouts.registration_last_excursion') %> </br>
+    <%= link_to  new_excursion_registration_path(Excursion.last), class: "btn custom-btn" do%>
+      <span class=" glyphicon glyphicon-pencil "></span> <%= t('views.layouts.register') %>
+    <% end %>
+  <% else %>
+    <%= t('views.layouts.no_active_excursion') %>
+  <% end %>
+</p>
