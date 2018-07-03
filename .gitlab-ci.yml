@@ -1,0 +1,39 @@
+image: "ruby:2.4"
+
+# Pick zero or more services to be used on all builds.
+# Only needed when using a docker container to run your tests in.
+# Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-a-service
+#services:
+#  - mysql:latest
+#  - redis:latest
+#  - postgres:latest
+
+# variables:
+#  POSTGRES_DB: database_name
+
+# Cache gems in between builds
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - ruby -v                                   # Print out ruby version for debugging
+  - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
+  - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+
+
+test:
+  script:
+    - bundle exec rake db:create RAILS_ENV=test
+    - bundle exec rake db:migrate
+    - bundle exec rake test
+
+
+# This deploy job uses a simple deploy flow to Heroku, other providers, e.g. AWS Elastic Beanstalk
+# are supported too: https://github.com/travis-ci/dpl
+#deploy:
+#  type: deploy
+#  environment: production
+#  script:
+#  - gem install dpl
+#  - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
